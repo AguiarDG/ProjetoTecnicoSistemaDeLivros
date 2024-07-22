@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Define a altura mínima do body para 100vh para ocupar toda a altura da janela */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* A área de conteúdo ocupa o espaço disponível */
+.content {
+  flex: 1;
+}
+
+.nav-link.active {
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 2px;
+}
