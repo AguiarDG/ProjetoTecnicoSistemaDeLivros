@@ -8,8 +8,6 @@
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-<!-- [![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls) -->
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
@@ -22,99 +20,81 @@
 
 ## 📝 Table of Contents
 
-- [About](#about)
-- [Getting Started](#getting_started)
+- [Sobre](#about)
+- [Início](#getting_started)
 - [Usage](#usage)
 - [Built Using](#built_using)
 - [Authors](#authors)
 
-<!-- - [About](#about)
-- [Getting Started](#getting_started)
-- [Deployment](#deployment)
-- [Usage](#usage)
-- [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgement) -->
-
-## 🧐 About <a name = "about"></a>
+## 🧐 Sobre <a name = "about"></a>
 
 Sistema de cadastro de livros - Criado para teste técnico
 
-## 🏁 Getting Started <a name = "getting_started"></a>
+## 🏁 Início <a name = "getting_started"></a>
 
 Instruções para baixar e executar o projeto em sua maquina
 
-### Prerequisites
+### Pré requisitos
 
-Para baixar e instalar você precisa primeiramente do git para baixar o projeto, do npm e do composer para instalar as dependencias
-
-<!-- ### Installing
-
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
+Necessário ter instalado na maquina:
 
 ```
-Give the example
+- Git
+- NPM
+- MySQL
+- SGDB (Sistema de gerenciamento de banco de dados, eu utilizei o HeidiSQL, mas você pode utilizar o da sua preferencia)
 ```
 
-And repeat
+## 🎈 Como utilizar <a name="usage"></a>
 
+- Baixar o projeto através do git utilizando o comando
 ```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
-
-## 🔧 Running the tests <a name = "tests"></a>
-
-Explain how to run the automated tests for this system.
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
+git clone https://github.com/AguiarDG/ProjetoTecnicoSistemaDeLivros.git
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
-
+- Depois de baixar o projeto, rodar o comando para instalar as dependencias:
 ```
-Give an example
-``` -->
+npm install
+```
 
-## 🎈 Usage <a name="usage"></a>
+- Agora duplique e renomeie o arquivo <b>.env.example</b> para <b>.env</b> e altere para as suas configurações;
+- Rode o comando abaixo para gerar o <b>APP_KEY</b> do arquivo <b>.env</b>
+```
+php artisan key:generate
+```
+
+- Crie um banco de dados chamado sistema_livros (como especificado no arquivo .env) e depois execute o migrate (Cria as tabelas)
+- Caso não queira rodar o migrate, na raiz do projeto tem um dump do banco de dados
+```
+php artisan migrate
+```
+
+- Realizar o build do Frontend
+```
+npm run build
+```
+
+- Executar o projeto
+```
+php artisan serve
+```
+
+Agora o projeto já esta configurado e acessivel no seu localhost:
+```
+http://127.0.0.1:8000
+```
 
 Antes de cadastrar o livro você precisa cadastrar pelo menos 1 assunto e 1 autor.
 É possivel tirar um relatorio por cada uma das telas que forem navegadas e na tela principal é possivel retirar um relatório geral.
 
-<!-- ## 🚀 Deployment <a name = "deployment"></a>
-
-Add additional notes about how to deploy this on a live system. -->
-
 ## ⛏️ Built Using <a name = "built_using"></a>
 
+- [MySQL](https://www.mysql.com/) - Database
 - [Laravel 11](https://www.laravel.com/) - Web Framework
 - [Bootstrap](https://getbootstrap.com) - Frontend Toolkit
 - [DomPDF](https://dompdf.github.io) - PDF Report (HTML to PDF converter)
 - [Vite](https://vitejs.dev) - Compile Frontend Toolkit
-- [NodeJs](https://nodejs.org/en/) - Server Environment
-- [Composer](https://getcomposer.org) - Server Environment
-- [XAMPP](https://www.apachefriends.org) - Server Environment
-- [MySQL](https://www.mysql.com/) - Database
 
 ## ✍️ Authors <a name = "authors"></a>
 
 - [@AguiarDG](https://github.com/AguiarDG)
-
-
-<!-- ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- References -->
