@@ -41,10 +41,10 @@ class AutoresController extends Controller
         try {
             $autor = Autor::create($request->all());
         } catch (QueryException $e) {
-            // Lidar com erros de consulta
+            // Retorna erros de consulta
             return back()->withErrors(['msg' => 'Erro ao cadastrar o autor: ' . $e->getMessage()]);
         } catch (\Exception $e) {
-            // Lidar com outros tipos de erro
+            // Retorna outros tipos de erro
             return back()->withErrors(['msg' => 'Erro desconhecido: ' . $e->getMessage()]);
         }
 
@@ -80,10 +80,10 @@ class AutoresController extends Controller
         try {
             $autor->update($request->all());
         } catch (QueryException $e) {
-            // Lidar com erros de consulta
+            // Retorna erros de consulta
             return back()->withErrors(['msg' => 'Erro ao atualizar o autor: ' . $e->getMessage()]);
         } catch (\Exception $e) {
-            // Lidar com outros tipos de erro
+            // Retorna outros tipos de erro
             return back()->withErrors(['msg' => 'Erro desconhecido: ' . $e->getMessage()]);
         }
 
@@ -110,10 +110,10 @@ class AutoresController extends Controller
                 // Deleta o registro do banco de dados
                 $autor->delete();
             } catch (QueryException $e) {
-                // Lidar com erros de consulta
+                // Retorna erros de consulta
                 return back()->withErrors(['msg' => 'Erro ao excluir o autor: ' . $e->getMessage()]);
             } catch (\Exception $e) {
-                // Lidar com outros tipos de erro
+                // Retorna outros tipos de erro
                 return back()->withErrors(['msg' => 'Erro desconhecido: ' . $e->getMessage()]);
             }
 

@@ -84,10 +84,10 @@ class LivrosController extends Controller
              */
             $livro = Livro::create($request->only('titulo', 'editora', 'edicao', 'ano_publicacao', 'valor'));
         } catch (QueryException $e) {
-            // Lidar com erros de consulta
+            // Retorna erros de consulta
             return back()->withErrors(['msg' => 'Erro ao cadastrar o livro: ' . $e->getMessage()]);
         } catch (\Exception $e) {
-            // Lidar com outros tipos de erro
+            // Retorna outros tipos de erro
             return back()->withErrors(['msg' => 'Erro desconhecido: ' . $e->getMessage()]);
         }
 
@@ -96,10 +96,10 @@ class LivrosController extends Controller
             // Grava os dados dos relations
             $livro->assunto()->sync($request->assunto);
         } catch (QueryException $e) {
-            // Lidar com erros de consulta
+            // Retorna erros de consulta
             return back()->withErrors(['msg' => 'Erro ao cadastrar o livro: ' . $e->getMessage()]);
         } catch (\Exception $e) {
-            // Lidar com outros tipos de erro
+            // Retorna outros tipos de erro
             return back()->withErrors(['msg' => 'Erro desconhecido: ' . $e->getMessage()]);
         }
 
@@ -107,10 +107,10 @@ class LivrosController extends Controller
             // Grava os dados dos relations
             $livro->autores()->sync($request->autores);
         } catch (QueryException $e) {
-            // Lidar com erros de consulta
+            // Retorna erros de consulta
             return back()->withErrors(['msg' => 'Erro ao cadastrar o livro: ' . $e->getMessage()]);
         } catch (\Exception $e) {
-            // Lidar com outros tipos de erro
+            // Retorna outros tipos de erro
             return back()->withErrors(['msg' => 'Erro desconhecido: ' . $e->getMessage()]);
         }
 
@@ -219,10 +219,10 @@ class LivrosController extends Controller
         try {
             $livro->update($request->only('titulo', 'editora', 'edicao', 'ano_publicacao', 'valor'));
         } catch (QueryException $e) {
-            // Lidar com erros de consulta
+            // Retorna erros de consulta
             return back()->withErrors(['msg' => 'Erro ao atualizar o livro: ' . $e->getMessage()]);
         } catch (\Exception $e) {
-            // Lidar com outros tipos de erro
+            // Retorna outros tipos de erro
             return back()->withErrors(['msg' => 'Erro desconhecido: ' . $e->getMessage()]);
         }
 
@@ -230,10 +230,10 @@ class LivrosController extends Controller
             // Cadastra os dados no relation Assunto
             $livro->assunto()->sync($request->assunto);
         } catch (QueryException $e) {
-            // Lidar com erros de consulta
+            // Retorna erros de consulta
             return back()->withErrors(['msg' => 'Erro ao atualizar o livro: ' . $e->getMessage()]);
         } catch (\Exception $e) {
-            // Lidar com outros tipos de erro
+            // Retorna outros tipos de erro
             return back()->withErrors(['msg' => 'Erro desconhecido: ' . $e->getMessage()]);
         }
 
@@ -241,10 +241,10 @@ class LivrosController extends Controller
             // Cadastra os dados no relation Autores
             $livro->autores()->sync($request->autores);
         } catch (QueryException $e) {
-            // Lidar com erros de consulta
+            // Retorna erros de consulta
             return back()->withErrors(['msg' => 'Erro ao atualizar o livro: ' . $e->getMessage()]);
         } catch (\Exception $e) {
-            // Lidar com outros tipos de erro
+            // Retorna outros tipos de erro
             return back()->withErrors(['msg' => 'Erro desconhecido: ' . $e->getMessage()]);
         }
 
@@ -260,10 +260,10 @@ class LivrosController extends Controller
             // Deleta o registro do banco de dados
             $livro->delete();
         } catch (QueryException $e) {
-            // Lidar com erros de consulta
+            // Retorna erros de consulta
             return back()->withErrors(['msg' => 'Erro ao excluir o livro: ' . $e->getMessage()]);
         } catch (\Exception $e) {
-            // Lidar com outros tipos de erro
+            // Retorna outros tipos de erro
             return back()->withErrors(['msg' => 'Erro desconhecido: ' . $e->getMessage()]);
         }
 
